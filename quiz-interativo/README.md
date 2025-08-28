@@ -1,5 +1,10 @@
 # 🎮 Quiz Interativo 🧠
 
+## 🔗 Acesse o Quiz Online
+
+👉 [Jogue agora o Quiz Interativo](https://auane-souto.github.io/Quiz/)
+
+
 Um quiz online com visual gamer, feito em React + Vite, que testa seus conhecimentos com perguntas aleatórias da Open Trivia DB. Prepare-se para desafiar sua mente em uma interface estilosa e responsiva!
 
 ## 🚀 Tecnologias Utilizadas
