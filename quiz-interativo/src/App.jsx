@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import GlobalStyle from './styles/GlobalStyle';
+import { Container } from './styles/AppStyle';
 import QuestionCard from './components/QuestionCard';
 
 const API_URL = 'https://opentdb.com/api.php?amount=10&type=multiple';
@@ -40,14 +42,17 @@ function App() {
     return <h2>Você acertou {score} de {questions.length} perguntas!</h2>;
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Quiz Interativo 🧠</h1>
-      <QuestionCard
-        question={questions[current].question}
-        options={questions[current].options}
-        onAnswer={handleAnswer}
-      />
-    </div>
+    <>
+      <GlobalStyle />
+      <Container>
+        <h1>Quiz Interativo 🧠</h1>
+        <QuestionCard
+          question={questions[current].question}
+          options={questions[current].options}
+          onAnswer={handleAnswer}
+        />
+      </Container>
+    </>
   );
 }
 
