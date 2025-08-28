@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import GlobalStyle from './styles/GlobalStyle';
 import { Container } from './styles/AppStyle';
+import { LoadingContainer, LoadingText } from './styles/LoadingStyle';
+import { ResultContainer, ResultText } from './styles/ResultStyle';
 import QuestionCard from './components/QuestionCard';
 
 const API_URL = 'https://opentdb.com/api.php?amount=10&type=multiple';
@@ -37,9 +39,27 @@ function App() {
     setCurrent(current + 1);
   };
 
-  if (loading) return <h2>Carregando perguntas...</h2>;
-  if (current >= questions.length)
-    return <h2>Você acertou {score} de {questions.length} perguntas!</h2>;
+  if (loading) {
+    return (
+      <>
+        <GlobalStyle />
+        <LoadingContainer>
+          <LoadingText>Carregando perguntas...</LoadingText>
+        </LoadingContainer>
+      </>
+    );
+  }
+
+  if (current >= questions.length) {
+    return (
+      <>
+        <GlobalStyle />
+        <ResultContainer>
+          <ResultText>Você acertou {score} de {questions.length} perguntas!</ResultText>
+        </ResultContainer>
+      </>
+    );
+  }
 
   return (
     <>
